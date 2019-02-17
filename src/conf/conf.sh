@@ -31,3 +31,9 @@ if [ -f ~/.zshrc ]; then
     mv ~/.zshrc ~/.zshrc.bak
 fi
 cp ${SCRIPT_DIR}/zsh/zshrc ~/.zshrc
+
+# 配置sshd
+mkdir /var/run/sshd
+sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
+sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+mkdir /root/.ssh

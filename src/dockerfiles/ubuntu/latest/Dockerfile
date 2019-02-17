@@ -17,7 +17,11 @@ RUN apt-get update && \
     apt-get -y install lrzsz && \
     apt-get -y install zsh && \
     apt-get -y install supervisor && \
-    git clone https://github.com/hypeaches/dev_docker_file.git /home && \
-    /bin/bash /home/dev_docker_file/src/conf/conf.sh
+    git clone https://github.com/hypeaches/dev_docker_file.git /home/dev_docker_file && \
+    /bin/bash /home/dev_docker_file/src/conf/conf.sh && \
+    rm -rf /home/dev_docker_file && \
+    echo '123456:123456' |chpasswd
 
-CMD /bin/zsh
+EXPOSE 22
+
+CMD ["/usr/sbin/sshd", "-D"]
