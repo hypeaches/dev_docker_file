@@ -20,7 +20,7 @@ RUN apt-get update && \
     git clone https://github.com/hypeaches/dev_docker_file.git /home/dev_docker_file && \
     /bin/bash /home/dev_docker_file/src/conf/conf.sh && \
     rm -rf /home/dev_docker_file && \
-    echo '123456:123456' |chpasswd
+    echo 'root:123456' |chpasswd
 
 EXPOSE 22
 
