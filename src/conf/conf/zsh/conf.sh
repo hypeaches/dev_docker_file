@@ -1,6 +1,7 @@
 #!/bin/bash
 
-SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE[0]}); pwd)
+#SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE[0]}); pwd)
+SCRIPT_DIR=$1
 echo "---------------script: $0"
 echo "-------------work dir: ${SCRIPT_DIR}"
 
